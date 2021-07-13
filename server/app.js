@@ -40,7 +40,7 @@ if ((alltopics === null && headlines === null) || status) {
   isToStore = true;
 }
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 setTimeout(() => {
   app.listen(PORT, () => {
     console.log(`[SERVER] Listening on ${PORT}`);
