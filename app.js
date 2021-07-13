@@ -12,7 +12,7 @@ var alltopics = null;
 var isToStore = false;
 var status = false;
 
-fs.stat("./server/data/alltopics.json", (err, stats) => {
+fs.stat("./data/alltopics.json", (err, stats) => {
   if (err) {
     console.log(err);
   } else {
@@ -30,8 +30,8 @@ fs.stat("./server/data/alltopics.json", (err, stats) => {
   }
 });
 
-headlines = fetchData.getStoredData("./server/data/headlines.json");
-alltopics = fetchData.getStoredData("./server/data/alltopics.json");
+headlines = fetchData.getStoredData("./data/headlines.json");
+alltopics = fetchData.getStoredData("./data/alltopics.json");
 
 if ((alltopics === null && headlines === null) || status) {
   console.log("[SERVER] FETCHED NEW DATA");
@@ -53,8 +53,8 @@ setTimeout(() => {
   app.listen(PORT, () => {
     console.log(`[SERVER] Listening on ${PORT}`);
     if (isToStore) {
-      fetchData.storeData("./server/data/headlines.json", headlines);
-      fetchData.storeData("./server/data/alltopics.json", alltopics);
+      fetchData.storeData("./data/headlines.json", headlines);
+      fetchData.storeData("./data/alltopics.json", alltopics);
     }
   });
 }, 5000);

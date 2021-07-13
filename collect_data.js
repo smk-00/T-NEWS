@@ -1,9 +1,7 @@
 const NewsAPI = require("newsapi");
 const fs = require("fs");
 //smk - efe63b7f29c243b68a537bdce36fe0e0
-// sm - fd0bf2b6a6454faf892f3accdd3243ed
-// demy - cbb1a3dde04547139f1010c54e2334d9
-const API_KEY = "cbb1a3dde04547139f1010c54e2334d9";
+const API_KEY = "efe63b7f29c243b68a537bdce36fe0e0";
 const newsapi = new NewsAPI(`${API_KEY}`);
 const FIELDS = [
   "business",
