@@ -2,10 +2,12 @@ const fetchData = require("./collect_data");
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("client/build"));
 
 var headlines = null;
 var alltopics = null;
@@ -24,8 +26,11 @@ fs.stat("./data/alltopics.json", (err, stats) => {
     if (month < curr_month) {
       status = true;
     }
-    if (month === curr_month && curr_date > date) {
+    if (month == curr_month && curr_date > date) {
       status = true;
+    }
+    if (status) {
+      console.log("[SERVER] DATA TO BE UPDATED");
     }
   }
 });
@@ -38,14 +43,6 @@ if ((alltopics === null && headlines === null) || status) {
   headlines = fetchData.getTopHeadlines();
   alltopics = fetchData.getAllTopics();
   isToStore = true;
-}
-
-if ((process.env.NODE_ENV = "production")) {
-  app.use(express.static("client/build"));
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
 }
 
 const PORT = process.env.PORT || 8000;
@@ -132,4 +129,8 @@ app.get("/article/:field/:id", (req, res) => {
     });
   }
   res.send(data2send);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });

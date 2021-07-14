@@ -47,7 +47,7 @@ const topics = [
   "MachineLearning",
   "VideoGames",
   "theni",
-  "NSEIndia",
+  "NSE",
   "google",
   "Environment",
   "pollution",

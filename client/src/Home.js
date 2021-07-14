@@ -7,6 +7,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      {!ispending && <div>{error}</div>}
       <div className="home-caro">
         {!ispending && !error && (
           <Caro
