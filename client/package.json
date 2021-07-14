@@ -13,6 +13,7 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "proxy": "localhost:8000",
   "scripts": {
     "client": "react-scripts start ",
     "server": "node ./server/app.js",
