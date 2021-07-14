@@ -9,7 +9,7 @@ const Headlines = () => {
     data: field_headlines,
     ispending,
     error,
-  } = useFetch(`/headlines/${field}`);
+  } = useFetch(`/api/headlines/${field}`);
   return (
     <div className="headlines">
       <div className="headlines-caro">

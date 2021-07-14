@@ -9,7 +9,7 @@ const Article = () => {
     data: solo_article,
     ispending,
     error,
-  } = useFetch(`/article/${field}/${id}`);
+  } = useFetch(`/api/article/${field}/${id}`);
 
   return (
     <div className="solo-article">

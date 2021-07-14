@@ -9,7 +9,7 @@ const Topics = () => {
     data: topic_articles,
     ispending,
     error,
-  } = useFetch(`/everything/${query}`);
+  } = useFetch(`/api/everything/${query}`);
   return (
     <div className="topic">
       <div className="topic-caro">

@@ -57,28 +57,28 @@ setTimeout(() => {
 }, 5000);
 
 /*GET - HEADLINES*/
-app.get("/headlines/business", (req, res) => {
+app.get("/api/headlines/business", (req, res) => {
   res.send(headlines.business);
 });
-app.get("/headlines/entertainment", (req, res) => {
+app.get("/api/headlines/entertainment", (req, res) => {
   res.send(headlines.entertainment);
 });
-app.get("/headlines/general", (req, res) => {
+app.get("/api/headlines/general", (req, res) => {
   res.send(headlines.general);
 });
-app.get("/headlines/health", (req, res) => {
+app.get("/api/headlines/health", (req, res) => {
   res.send(headlines.health);
 });
-app.get("/headlines/science", (req, res) => {
+app.get("/api/headlines/science", (req, res) => {
   res.send(headlines.science);
 });
-app.get("/headlines/sports", (req, res) => {
+app.get("/api/headlines/sports", (req, res) => {
   res.send(headlines.sports);
 });
-app.get("/headlines/technology", (req, res) => {
+app.get("/api/headlines/technology", (req, res) => {
   res.send(headlines.technology);
 });
-app.get("/headlines/all", (req, res) => {
+app.get("/api/headlines/all", (req, res) => {
   const FIELDS = [
     "business",
     "entertainment",
@@ -98,13 +98,13 @@ app.get("/headlines/all", (req, res) => {
 });
 
 /*GET - EVERYTHING*/
-app.get("/everything/:query", async (req, res) => {
+app.get("/api/everything/:query", async (req, res) => {
   var news_q = req.params.query;
   res.send(alltopics[news_q]);
 });
 
 /*GET - UNIQUE ARTICLE*/
-app.get("/article/:field/:id", (req, res) => {
+app.get("/api/article/:field/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const field = req.params.field;
   var data2send = null;

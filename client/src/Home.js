@@ -3,7 +3,11 @@ import useFetch from "./useFetch";
 import { Link } from "react-router-dom";
 import "./Home.css";
 const Home = () => {
-  const { data: all_headlines, ispending, error } = useFetch("/headlines/all");
+  const {
+    data: all_headlines,
+    ispending,
+    error,
+  } = useFetch("/api/headlines/all");
 
   return (
     <div className="home">
