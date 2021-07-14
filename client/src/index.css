@@ -9,3 +9,19 @@ a {
 a:hover {
   text-decoration: none;
 }
+footer > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer {
+  box-shadow: 0px 0px 6px 1px rgb(83, 83, 83);
+}
+footer > div > a {
+  color: rgb(92, 92, 92);
+}
+footer > div > p {
+  color: rgb(92, 92, 92);
+}
+footer > div > a:hover {
+  color: black;
+}
